@@ -3,45 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGS Media</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
-        header { background: #333; color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        nav { display: flex; justify-content: center; gap: 20px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; }
-        section { padding: 100px 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-        #home { background-color: #f4f4f4; }
-        #about { background-color: #e2e2e2; }
-        #shop { background-color: #d0d0d0; }
-        .buy-button { background: #00C371; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; border-radius: 5px; font-weight: bold; margin-top: 20px;}
-        .buy-button:hover { background: #009f5b; }
-    </style>
+    <title>SGS Media | Inspiring Digital Excellence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#shop">Our Shop</a>
-        </nav>
+    <header id="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <h2>SGS Media</h2> 
+            </div>
+            <nav id="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#store">Store</a>
+                <a href="#services">Services</a>
+                <a href="#team">Team</a>
+                <a href="#support">Support</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">&#9776;</button>
+        </div>
     </header>
 
-    <section id="home">
-        <h1>Welcome to SGS Media</h1>
-        <p>Creating impact through digital excellence.</p>
+    <section id="hero" class="section">
+        <div class="container hero-content">
+            <h1>Illuminating the World Through Media</h1>
+            <p>Empowering voices and sharing transformative stories with creative digital solutions.</p>
+            <a href="#about" class="btn btn-primary">Discover Our Mission</a>
+        </div>
     </section>
 
-    <section id="about">
-        <h2>About Our Organisation</h2>
-        <p>We are a dedicated team focused on delivering high-quality media solutions.</p>
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Our Mission</h3>
+                    <p>To create and distribute high-quality, faith-driven media that inspires, educates, and transforms communities globally.</p>
+                </div>
+                <div>
+                    <h3>Our Vision</h3>
+                    <p>To be the premier digital platform where purpose meets creativity, nurturing a generation grounded in truth.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="shop">
-        <h2>Support Our Work</h2>
-        <p>Purchase our digital guides or services directly below.</p>
-        <a href="YOUR_PAYSTACK_OR_FLUTTERWAVE_LINK_HERE" class="buy-button" target="_blank">Buy Now - ₦5,000</a>
+    <section id="store" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Store</h2>
+            <p class="section-subtitle">Equip yourself with our latest books and digital resources.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-placeholder">Book Cover</div>
+                    <h3>Foundations Guide</h3>
+                    <p>₦5,000</p>
+                    <a href="YOUR_PAYSTACK_LINK" class="btn btn-secondary">Buy Now</a>
+                </div>
+                </div>
+        </div>
     </section>
 
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid-3">
+                <div class="service-card">
+                    <h3>Content Creation</h3>
+                    <p>Professional writing, editing, and multimedia production tailored to your message.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Digital Publishing</h3>
+                    <p>Bringing your manuscripts to life with top-tier formatting and distribution.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Media Strategy</h3>
+                    <p>Consulting services to help you reach your audience effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section">
+        <div class="container">
+            <h2 class="section-title">Meet the Team</h2>
+            <div class="grid-3">
+                <div class="team-card">
+                    <div class="team-avatar"></div>
+                    <h3>Emmanuel</h3>
+                    <p>Co-Founder & Director</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="support" class="section bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Support Our Mission</h2>
+            <p>Your partnership helps us continue creating impactful content. Consider supporting our projects today.</p>
+            <br>
+            <a href="YOUR_DONATION_LINK" class="btn btn-primary">Partner With Us</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Collaborate With Us</h2>
+            <p>Have a project in mind or want to reach out? We would love to hear from you.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-secondary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2026 SGS Media. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
