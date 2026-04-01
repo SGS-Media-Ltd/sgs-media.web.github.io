@@ -22,3 +22,21 @@ window.addEventListener('scroll', () => {
         header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
     }
 });
+
+// --- Store Carousel Logic ---
+const productCarousel = document.getElementById('product-carousel');
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+
+if (productCarousel && nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+        // Calculate the width of one card + the 20px CSS gap
+        const cardWidth = productCarousel.querySelector('.product-card').offsetWidth + 20; 
+        productCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+        const cardWidth = productCarousel.querySelector('.product-card').offsetWidth + 20;
+        productCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+}

@@ -189,6 +189,70 @@ nav a:hover {
     margin: 0 auto 20px;
 }
 
+/* --- Store Carousel Styles --- */
+.relative-container {
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+.product-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    width: 100%;
+    
+    /* Hide scrollbars */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.product-carousel::-webkit-scrollbar {
+    display: none; 
+}
+
+.product-carousel .product-card {
+    min-width: calc(33.333% - 14px); 
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover { 
+    background-color: var(--light-blue); 
+    transform: scale(1.05);
+}
+
+.prev-btn { left: -60px; }
+.next-btn { right: -60px; }
+
 /* --- Contact Form --- */
 .contact-form {
     max-width: 600px;
@@ -217,7 +281,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows safe wrapping on smaller screens */
+    flex-wrap: wrap; 
     gap: 20px;
 }
 
@@ -230,28 +294,32 @@ nav a:hover {
 .social-icon {
     width: 24px;
     height: 24px;
-    /* This filter makes standard black SVG icons turn white to match the dark footer */
     filter: invert(100%); 
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .footer-socials a:hover .social-icon {
-    /* Slight jump effect on hover */
     transform: translateY(-3px);
-    /* Turns the icon to your brand's Accent Gold on hover */
     filter: invert(85%) sepia(31%) saturate(1210%) hue-rotate(345deg) brightness(101%) contrast(95%);
 }
 
-/* Responsive Footer for Mobile */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
+/* ========================================= */
+/* --- Responsive Design (Media Queries) --- */
+/* ========================================= */
+
+/* Tablets and smaller */
+@media (max-width: 992px) {
+    /* Show 2 carousel items on tablet */
+    .product-carousel .product-card { 
+        min-width: calc(50% - 10px); 
     }
+    .prev-btn { left: -20px; }
+    .next-btn { right: -20px; }
 }
-/* --- Responsive Design (Mobile) --- */
+
+/* Mobile Phones */
 @media (max-width: 768px) {
+    /* Header & Nav Mobile Styles */
     .mobile-menu-btn { display: block; }
     
     nav {
@@ -268,9 +336,29 @@ nav a:hover {
     }
 
     nav.active { left: 0; }
-    
     nav a { margin: 15px 0; display: block; }
 
+    /* Layout Mobile Styles */
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
     #hero h1 { font-size: 2.5rem; }
+
+    /* Footer Mobile Styles */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* Very Small Mobile Phones */
+@media (max-width: 600px) {
+    /* Show 1 carousel item strictly centred on mobile */
+    .product-carousel .product-card { 
+        min-width: 100%; 
+        scroll-snap-align: center;
+    }
+    /* Hide buttons on mobile so users naturally swipe with their thumbs */
+    .carousel-btn {
+        display: none; 
+    }
 }
