@@ -13,7 +13,7 @@ The website is hosted via GitHub Pages and is accessible at:
 * **Frontend:** HTML5, CSS3 (Vanilla)
 * **Hosting:** GitHub Pages (Organisation Tier)
 * **Commerce:** Paystack / Flutterwave Integration (Payment Links)
-* **Domain Management:** Cloudflare / GitHub DNS
+* **Domain Management:** 
 
 ---
 
