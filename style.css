@@ -98,11 +98,23 @@ header {
     height: 80px;
 }
 
-.logo h2 {
-    color: var(--primary-blue);
-    font-size: 1.8rem;
+/* --- Logo Image Styles --- */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
+.nav-logo {
+    /* The header is 80px tall, so 60px leaves a perfect 10px buffer on top and bottom */
+    max-height: 60px; 
+    width: auto; /* Ensures the image doesn't stretch or distort */
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05); /* Gives a slight 'pop' effect when users hover over it */
+}
 nav a {
     color: var(--primary-blue);
     text-decoration: none;
