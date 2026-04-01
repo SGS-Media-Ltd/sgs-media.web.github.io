@@ -199,6 +199,9 @@ nav a:hover {
     width: 150px;
     border-radius: 50%;
     margin: 0 auto 20px;
+    display: block; /* Ensures the image centers correctly */
+    object-fit: cover; /* CRITICAL: Prevents the face from stretching if the image isn't perfectly square */
+    border: 3px solid var(--light-blue); /* Adds a nice brand-colored ring around the photos */
 }
 
 /* --- Store Carousel Styles --- */
