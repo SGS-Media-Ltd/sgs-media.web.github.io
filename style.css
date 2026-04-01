@@ -107,7 +107,7 @@ header {
 
 .nav-logo {
     /* The header is 80px tall, so 60px leaves a perfect 10px buffer on top and bottom */
-    max-height: 60px; 
+    max-height: 70px; 
     width: auto; /* Ensures the image doesn't stretch or distort */
     transition: transform 0.3s ease;
 }
