@@ -157,12 +157,16 @@
         <div class="container text-center">
             <h2 class="section-title">Collaborate With Us</h2>
             <p>Have a project in mind or want to reach out? We would love to hear from you.</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn btn-secondary">Send Message</button>
+            
+            <form id="contact-form" class="contact-form">
+                <input type="text" id="contact-name" placeholder="Your Name" required>
+                <input type="email" id="contact-email" placeholder="Your Email" required>
+                <textarea id="contact-message" rows="5" placeholder="Your Message" required></textarea>
+                
+                <button type="submit" id="contact-btn" class="btn btn-secondary">Send Message</button>
             </form>
+            
+            <p id="form-status" style="display: none; margin-top: 15px; font-weight: bold; color: var(--accent-green);"></p>
         </div>
     </section>
 
